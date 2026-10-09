@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veritas AI — Multi-Agent Research & Contradiction Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-background">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">VERITAS <span class="accent-text">AI</span></h1>
+          <p class="brand-tagline">Autonomous Multi-Agent Fact Verification & Stress-Testing Pipeline</p>
+        </div>
+      </div>
+      <div class="system-status">
+        <span class="status-chip live"><span class="pulse-dot"></span> CrewAI Engine Ready</span>
+        <span class="model-badge">Gemini 3.5 Flash-Lite</span>
+        <span class="tool-badge">Firecrawl Search</span>
+      </div>
+    </header>
+
+    <!-- Search / Topic Control Section -->
+    <section class="search-section card">
+      <div class="search-header">
+        <h2>Launch Deep Research Investigation</h2>
+        <p>Deploy a 5-agent crew to harvest raw sources, isolate atomic claims, cross-verify contradictions, and stress-test weak reasoning.</p>
+      </div>
+
+      <form id="research-form" class="search-form">
+        <div class="input-wrapper">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="topic-input" 
+            placeholder="Enter research topic (e.g., impact of remote work on productivity)..." 
+            required 
+            autocomplete="off"
+            value="impact of remote work on productivity"
+          />
+          <button type="submit" id="run-btn" class="glow-button">
+            <span class="btn-icon">⚡</span>
+            <span class="btn-text">Deploy Crew</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="topic-suggestions">
+        <span class="suggestions-label">Try asking:</span>
+        <button class="topic-chip" data-topic="impact of remote work on productivity">🏡 Remote Work Productivity</button>
+        <button class="topic-chip" data-topic="commercial viability of solid state batteries by 2027">🔋 Solid-State Batteries</button>
+        <button class="topic-chip" data-topic="threat of quantum computers to RSA-2048 cryptography">🔐 Quantum vs RSA Encryption</button>
+        <button class="topic-chip" data-topic="impact of generative AI coding assistants on software reliability">💻 AI Coding & Code Quality</button>
+      </div>
+    </section>
+
+    <!-- Visual Agent Pipeline -->
+    <section class="pipeline-section card">
+      <div class="section-title-row">
+        <h3>Autonomous Agent Pipeline</h3>
+        <span id="pipeline-status" class="status-indicator idle">Standby</span>
+      </div>
+
+      <div class="agents-track">
+        <div class="agent-node" id="agent-research">
+          <div class="agent-avatar">🌐</div>
+          <div class="agent-info">
+            <span class="agent-role">Agent 1</span>
+            <h4 class="agent-name">Web Research</h4>
+            <p class="agent-desc">Crawls live web via Firecrawl for 5 credible raw sources</p>
+          </div>
+          <div class="agent-status-badge">Idle</div>
+        </div>
+
+        <div class="track-connector"><div class="connector-pulse"></div></div>
+
+        <div class="agent-node" id="agent-analysis">
+          <div class="agent-avatar">🔬</div>
+          <div class="agent-info">
+            <span class="agent-role">Agent 2</span>
+            <h4 class="agent-name">Analyst</h4>
+            <p class="agent-desc">Extracts atomic verifiable claims and tags citations</p>
+          </div>
+          <div class="agent-status-badge">Idle</div>
+        </div>
+
+        <div class="track-connector"><div class="connector-pulse"></div></div>
+
+        <div class="agent-node" id="agent-contradiction">
+          <div class="agent-avatar">⚖️</div>
+          <div class="agent-info">
+            <span class="agent-role">Agent 3</span>
+            <h4 class="agent-name">Contradiction</h4>
+            <p class="agent-desc">Cross-verifies claims across sources to detect conflicts</p>
+          </div>
+          <div class="agent-status-badge">Idle</div>
+        </div>
+
+        <div class="track-connector"><div class="connector-pulse"></div></div>
+
+        <div class="agent-node" id="agent-devils">
+          <div class="agent-avatar">🥊</div>
+          <div class="agent-info">
+            <span class="agent-role">Agent 4</span>
+            <h4 class="agent-name">Devil's Advocate</h4>
+            <p class="agent-desc">Adversarially attacks reasoning, fallacies, and leaps</p>
+          </div>
+          <div class="agent-status-badge">Idle</div>
+        </div>
+
+        <div class="track-connector"><div class="connector-pulse"></div></div>
+
+        <div class="agent-node" id="agent-report">
+          <div class="agent-avatar">📊</div>
+          <div class="agent-info">
+            <span class="agent-role">Agent 5</span>
+            <h4 class="agent-name">Report Generator</h4>
+            <p class="agent-desc">Calculates confidence scores and formats report</p>
+          </div>
+          <div class="agent-status-badge">Idle</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Execution Terminal Feed -->
+    <section class="terminal-section card collapsed" id="terminal-section">
+      <div class="terminal-header" id="terminal-toggle">
+        <div class="terminal-title">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span>Live Crew Execution Stream</span>
+          <span class="line-badge" id="terminal-line-count">0 lines</span>
+        </div>
+        <div class="terminal-actions">
+          <button type="button" class="term-btn" id="clear-term-btn">Clear</button>
+          <button type="button" class="term-btn" id="toggle-term-btn">Expand Log</button>
+        </div>
+      </div>
+      <div class="terminal-body" id="terminal-output">
+        <div class="terminal-placeholder">Ready. Click 'Deploy Crew' above to stream live agent thoughts, tool invocations, and findings.</div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <main id="results-container" class="results-section">
+      <!-- Executive Summary Cards -->
+      <div class="metrics-grid">
+        <div class="metric-card card">
+          <div class="metric-icon blue">📋</div>
+          <div class="metric-data">
+            <span class="metric-value" id="metric-total">12</span>
+            <span class="metric-label">Claims Extracted</span>
+          </div>
+        </div>
+
+        <div class="metric-card card">
+          <div class="metric-icon purple">⚔️</div>
+          <div class="metric-data">
+            <span class="metric-value" id="metric-contradictions">58%</span>
+            <span class="metric-label">Contradiction Rate</span>
+          </div>
+        </div>
+
+        <div class="metric-card card">
+          <div class="metric-icon green">🛡️</div>
+          <div class="metric-data">
+            <span class="metric-value" id="metric-holds">2</span>
+            <span class="metric-label">High Confidence Truths</span>
+          </div>
+        </div>
+
+        <div class="metric-card card">
+          <div class="metric-icon orange">⚠️</div>
+          <div class="metric-data">
+            <span class="metric-value" id="metric-weak">10</span>
+            <span class="metric-label">Weak / Unsupported Claims</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Results Display -->
+      <div class="results-tabs card">
+        <div class="tabs-header">
+          <div class="tabs-list">
+            <button class="tab-btn active" data-tab="claims-view">
+              <span class="tab-icon">🎯</span> Interactive Claim Explorer
+            </button>
+            <button class="tab-btn" data-tab="report-view">
+              <span class="tab-icon">📑</span> Formatted Synthesis Report
+            </button>
+          </div>
+          <div class="tab-actions">
+            <button class="action-btn" id="copy-report-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Markdown
+            </button>
+            <button class="action-btn" id="download-report-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Download .MD
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 1: Interactive Claim Explorer -->
+        <div class="tab-content active" id="claims-view">
+          <div class="filters-bar">
+            <div class="filter-pills">
+              <button class="pill active" data-filter="all">All (<span id="count-all">12</span>)</button>
+              <button class="pill" data-filter="holds">Holds / High Confidence (<span id="count-holds">2</span>)</button>
+              <button class="pill" data-filter="contradicted">Contradicted (<span id="count-contradicted">7</span>)</button>
+              <button class="pill" data-filter="weak">Weak Reasoning (<span id="count-weak">7</span>)</button>
+              <button class="pill" data-filter="unsupported">Unsupported (<span id="count-unsupported">3</span>)</button>
+            </div>
+            <div class="search-claims">
+              <input type="text" id="claim-search-input" placeholder="Search claims..." />
+            </div>
+          </div>
+
+          <div class="claims-list" id="claims-list">
+            <!-- Dynamically populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Formatted Synthesis Report -->
+        <div class="tab-content" id="report-view">
+          <div class="markdown-body" id="markdown-output">
+            <!-- Rendered markdown report -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Powered by <strong>CrewAI</strong> • <strong>Google Gemini 3.5 Flash-Lite</strong> • <strong>Firecrawl Web Search</strong></p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
