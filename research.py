@@ -13,10 +13,14 @@ if sys.platform == "win32":
 import litellm
 import crewai
 import langchain
+from schema import ClaimList
 from crewai import LLM, Agent, Task, Crew, Process
 from crewai.tools import tool
 from firecrawl import FirecrawlApp
 from google.genai import errors as genai_errors
+from dotenv import load_dotenv
+load_dotenv()
+from sources import fetch_full_text, save_source
 
 # --- 1. Monkeypatch LiteLLM cache breakpoint ---
 if not getattr(litellm, "_cache_breakpoint_patched", False):
@@ -33,10 +37,7 @@ if not getattr(litellm, "_cache_breakpoint_patched", False):
     litellm.completion = _patched_completion
     litellm._cache_breakpoint_patched = True
 
-# --- 2. API Keys ---
-# Set your keys here or via system environment variables
-os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6JIkmiISrep91Jvzsd-5aRyukgc_93ajGeCdXIGvClF_A")
-os.environ["FIRECRAWL_API_KEY"] = os.getenv("FIRECRAWL_API_KEY", "fc-679d654c32e449119404fada655f687c")
+
 
 # --- 3. Models (Using flash-lite for reliable free-tier quota) ---
 lite_llm = LLM(
@@ -53,13 +54,13 @@ strong_llm = LLM(
 # --- 4. Firecrawl Tool (Supports both Dict and Object return types) ---
 firecrawl_client = FirecrawlApp(api_key=os.environ["FIRECRAWL_API_KEY"])
 
+HEAD_CHARS = 4000 
+
 @tool("Firecrawl Web Search")
 def firecrawl_search(query: str) -> str:
-    """Search the web for a topic and return raw text content from multiple credible sources with their URLs. Input should be a search query string."""
+    """Search the web for a topic. Returns URL, title and the opening text of each source."""
     try:
         results = firecrawl_client.search(query, limit=5)
-        
-        # Safely extract from both dictionary and object formats
         if isinstance(results, dict):
             items = results.get("data", []) or results.get("web", [])
         else:
@@ -68,14 +69,19 @@ def firecrawl_search(query: str) -> str:
         output = []
         for item in items:
             if isinstance(item, dict):
-                url = item.get("url", "unknown URL")
+                url = item.get("url", "")
                 title = item.get("title", "")
-                description = (item.get("description", "") or item.get("markdown", "") or "")[:350]
             else:
-                url = getattr(item, "url", "unknown URL")
+                url = getattr(item, "url", "")
                 title = getattr(item, "title", "")
-                description = (getattr(item, "description", "") or getattr(item, "markdown", "") or "")[:350]
-            output.append(f"URL: {url}\nTitle: {title}\nContent: {description}\n")
+            if not url:
+                continue
+
+            text = fetch_full_text(url)
+            if not text:
+                continue          # skip pages that failed to scrape
+            save_source(url, text)
+            output.append(f"URL: {url}\nTitle: {title}\nContent: {text[:HEAD_CHARS]}\n")
 
         return "\n---\n".join(output) if output else "No results found."
     except Exception as e:
@@ -169,6 +175,7 @@ analysis_task = Task(
     expected_output="A list of structured claims, each with: claim_id, claim_text, source_url.",
     agent=analysis_agent,
     context=[research_task],
+    output_pydantic=ClaimList,
 )
 
 contradiction_task = Task(
