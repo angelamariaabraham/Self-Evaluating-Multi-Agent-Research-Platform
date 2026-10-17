@@ -33,20 +33,18 @@ def _extract_markdown(result) -> str:
         return getattr(data, "markdown", "") or ""
     return getattr(result, "markdown", "") or ""
 
-
 def fetch_full_text(url: str) -> str:
     """Scrape page, return markdown. Return empty string on failure."""
     try:
-        if hasattr(_client, "scrape"):
-            result = _client.scrape(url, formats=["markdown"])
-        else:
-            result = _client.scrape_url(url, formats=["markdown"])
+        result = _client.scrape(
+            url,
+            formats=["markdown"],
+            only_main_content=True,
+        )
         return _extract_markdown(result)
     except Exception as e:
         print(f"Scrape failed for {url}: {e}")
         return ""
-
-
 def save_source(url: str, text: str) -> None:
     with open(_path_for(url), "w", encoding="utf-8") as f:
         json.dump({"url": url, "text": text}, f, ensure_ascii=False)
