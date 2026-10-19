@@ -1,13 +1,10 @@
 import re
 from sources import load_source
 
-
 def normalize(s: str) -> str:
     s = s.lower()
-    s = re.sub(r"[*#\[\]`>_]", "", s)   # markdown symbols
-    s = re.sub(r"\s+", " ", s)          # collapse whitespace
+    s = re.sub(r"[^a-z0-9]+", " ", s)   # keep letters and digits only
     return s.strip()
-
 
 def span_in_source(source_url: str, evidence_span: str) -> bool:
     source = normalize(load_source(source_url))
