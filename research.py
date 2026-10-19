@@ -1,7 +1,7 @@
 import os
 import sys
 import asyncio
-
+from checks import faithfulness_rate, span_in_source
 # Ensure Windows terminal supports emoji / utf-8 characters without charmap errors
 if sys.platform == "win32":
     try:
@@ -20,7 +20,8 @@ from firecrawl import FirecrawlApp
 from google.genai import errors as genai_errors
 from dotenv import load_dotenv
 load_dotenv()
-from sources import fetch_full_text, save_source
+from sources import fetch_full_text, save_source, load_source
+from checks import faithfulness_rate, span_in_source
 
 # --- 1. Monkeypatch LiteLLM cache breakpoint ---
 if not getattr(litellm, "_cache_breakpoint_patched", False):
@@ -53,8 +54,8 @@ strong_llm = LLM(
 
 # --- 4. Firecrawl Tool (Supports both Dict and Object return types) ---
 firecrawl_client = FirecrawlApp(api_key=os.environ["FIRECRAWL_API_KEY"])
-
-HEAD_CHARS = 4000 
+HEAD_CHARS = 4000
+MIN_CHARS = 3000
 
 @tool("Firecrawl Web Search")
 def firecrawl_search(query: str) -> str:
@@ -77,15 +78,19 @@ def firecrawl_search(query: str) -> str:
             if not url:
                 continue
 
-            text = fetch_full_text(url)
-            if not text:
-                continue          # skip pages that failed to scrape
-            save_source(url, text)
+            text = load_source(url)              # 1. try stored copy first
+            if not text:                          # 2. not stored: scrape once
+                text = fetch_full_text(url)
+                if len(text) < MIN_CHARS:         # 3. thin or failed page: skip
+                    continue
+                save_source(url, text)            # 4. store it for next time
+
             output.append(f"URL: {url}\nTitle: {title}\nContent: {text[:HEAD_CHARS]}\n")
 
         return "\n---\n".join(output) if output else "No results found."
     except Exception as e:
         return f"Error executing search: {str(e)}"
+
 
 # --- 5. Agents ---
 research_agent = Agent(
@@ -168,11 +173,14 @@ research_task = Task(
 
 analysis_task = Task(
     description=(
-        "Given the raw source entries collected above, extract the key factual claims from each. "
-        "Break the text into atomic, individually-verifiable claims. Tag each claim with "
-        "the source URL it came from and assign each a unique claim ID."
+        "Given the raw source entries collected above, extract key factual claims from each. "
+        "Break the text into atomic, individually-verifiable claims. "
+        "For each claim give: a unique claim_id, claim_text, source_url, and evidence_span. "
+        "evidence_span must be ONE sentence copied word for word from the source content. "
+        "Do not paraphrase it. Do not fix typos. "
+        "If no sentence supports the claim, drop the claim."
     ),
-    expected_output="A list of structured claims, each with: claim_id, claim_text, source_url.",
+    expected_output="A ClaimList with claim_id, claim_text, source_url, evidence_span for every claim.",
     agent=analysis_agent,
     context=[research_task],
     output_pydantic=ClaimList,
@@ -194,11 +202,11 @@ contradiction_task = Task(
 
 devils_advocate_task = Task(
     description=(
-        "Compile all claims, their contradiction flags, and their stress-test verdicts "
-        "into a final report. Assign each claim a confidence score based on whether it "
-        "was contradicted and how it held up under stress-testing. Cite the source URL for every claim, "
-        "using the source_url field from the original structured claims — do not omit it or write "
-        "'not provided' if it exists anywhere in the upstream context."
+        "For each claim in the structured claims, actively argue against it. "
+        "Use the contradiction flags as extra evidence. Identify weak reasoning, "
+        "missing evidence, or unsupported leaps. Give each claim a stress_test_verdict "
+        "of exactly one of: holds, weak, unsupported. Add a one-sentence justification. "
+        "Keep each claim's claim_id and source_url."
     ),
     expected_output="A list of claims annotated with: stress_test_verdict and a short justification for each.",
     agent=devils_advocate_agent,
@@ -260,12 +268,26 @@ async def run_crew_with_retry(crew, inputs, max_attempts=5):
     raise RuntimeError("Crew failed after max attempts.")
 
 # --- 9. Entrypoint ---
+
+
 async def main():
     topic = "hallucination detection"
     print(f"Starting research crew for topic: '{topic}'...")
     result = await run_crew_with_retry(research_crew, {"topic": topic})
     print("\n================ FINAL REPORT ================\n")
     print(result)
+
+    # --- measure faithfulness ---
+    out = result.tasks_output[1].pydantic
+    if out:
+        claims = out.claims
+        print("\nclaims:", len(claims))
+        print("faithfulness:", faithfulness_rate(claims))
+        for c in claims:
+            print(c.claim_id, span_in_source(c.source_url, c.evidence_span))
+    else:
+        print("\npydantic output missing. raw:")
+        print(result.tasks_output[1].raw)
 
 if __name__ == "__main__":
     asyncio.run(main())

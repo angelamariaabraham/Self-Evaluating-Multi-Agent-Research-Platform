@@ -1,7 +1,9 @@
 import os
 import json
+import re
 import hashlib
 from pathlib import Path
+import time
 
 from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
@@ -33,18 +35,30 @@ def _extract_markdown(result) -> str:
         return getattr(data, "markdown", "") or ""
     return getattr(result, "markdown", "") or ""
 
-def fetch_full_text(url: str) -> str:
-    """Scrape page, return markdown. Return empty string on failure."""
-    try:
-        result = _client.scrape(
-            url,
-            formats=["markdown"],
-            only_main_content=True,
-        )
-        return _extract_markdown(result)
-    except Exception as e:
-        print(f"Scrape failed for {url}: {e}")
-        return ""
+MIN_CHARS = 3000
+
+def fetch_full_text(url: str, tries: int = 3) -> str:
+    """Scrape page, return cleaned markdown. Retry if result looks thin."""
+    best = ""
+    for attempt in range(tries):
+        try:
+            result = _client.scrape(
+                url,
+                formats=["markdown"],
+                only_main_content=True,
+                max_age=0,
+            )
+            text = clean_markdown(_extract_markdown(result))
+            if len(text) > len(best):
+                best = text
+            if len(best) >= MIN_CHARS:
+                return best
+        except Exception as e:
+            print(f"Scrape failed for {url} (try {attempt + 1}): {e}")
+        time.sleep(2)
+    return best
+
+
 def save_source(url: str, text: str) -> None:
     with open(_path_for(url), "w", encoding="utf-8") as f:
         json.dump({"url": url, "text": text}, f, ensure_ascii=False)
@@ -68,3 +82,25 @@ def chunk_text(text: str, max_chars: int = 6000, overlap: int = 300) -> list[str
         chunks.append(text[start:start + max_chars])
         start += step
     return chunks
+
+
+TAIL_MARKERS = [
+    "[Bytez.com]",
+    "protected by **reCAPTCHA**",
+    "uses cookies for essential functions",
+]
+
+
+def clean_markdown(text: str) -> str:
+    # [label](url) -> label
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    # cut footer boilerplate: keep text before earliest marker
+    cut = len(text)
+    for m in TAIL_MARKERS:
+        i = text.find(m)
+        if i != -1:
+            cut = min(cut, i)
+    text = text[:cut]
+    # collapse blank-line runs
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
