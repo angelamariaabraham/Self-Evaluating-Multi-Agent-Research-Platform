@@ -1,0 +1,154 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "GPTZero's Hallucination Detector automatically detects hallucinated sources and poorly supported claims in essays.",
+      "source_url": "https://gptzero.me/hallucination-detector",
+      "evidence_span": "GPTZero's Hallucination Detector automatically detects hallucinated sources and poorly supported claims in essays.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Citation checkers identify hallucinated references instantly to help educators maintain academic integrity without spending time on manual verification.",
+      "source_url": "https://gptzero.me/hallucination-detector",
+      "evidence_span": "Our citation checker identifies these hallucinated references instantly, helping educators maintain academic integrity without spending time on manual verification.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "Source finder detects checkable objective claims in text and matches those to sources from online, academic, and publicly available data coming from AI-powered search engines.",
+      "source_url": "https://gptzero.me/hallucination-detector",
+      "evidence_span": "Source finder will detect as many checkable, objective claims in your text and match those to sources from online, academic, and publicly available data coming from AI-powered search engines.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "In October 2025, several hallucinations, including non-existent academic sources and a fake quote from a federal court judgement were discovered in an A$ 440,000 report written by Deloitte and submitted to the Australian government in July.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "In October 2025, several hallucinations, including non-existent academic sources and a fake quote from a federal court judgement were discovered in an A$ 440,000 report written by Deloitte and submitted to the Australian government in July.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "AI hallucinations refer to statements made by the system which are either factually incorrect, illogical, or not substantiated by any credible sources but sound coherent and fluent on the face of it.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2949719126000361",
+      "evidence_span": "AI hallucinations refer to statements made by the system which are either factually incorrect, illogical, or not substantiated by any credible sources but sound coherent and fluent on the face of it.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "These behaviors raise serious problems when using AI in high-stakes applications such as medicine, teaching, legal matters, finance, or science, where accurate facts are required.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2949719126000361",
+      "evidence_span": "These behaviors raise serious problems when using AI in high-stakes applications such as medicine, teaching, legal matters, finance, or science, where accurate facts are required.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "Data will be made available on request.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2949719126000361",
+      "evidence_span": "Data will be made available on request.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "Engineers view hallucinations as an active research problem and a key barrier to reliable deployment, especially in high-stakes domains such as healthcare, finance, legal and regulatory work.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Engineers view hallucinations as an active research problem and a key barrier to reliable deployment, especially in high-stakes domains such as healthcare, finance, legal and regulatory work.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C11",
+      "claim_text": "Hallucinations generally involve AI models producing fabricated content that has no grounding in real data.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Hallucinations generally involve AI models producing fabricated content that has no grounding in real data.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C12",
+      "claim_text": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C13",
+      "claim_text": "Specialized legal AI tools hallucinate between 17% and 34% of the time according to Stanford research.",
+      "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+      "evidence_span": "Stanford research found that even specialized legal AI tools hallucinate between 17% and 34% of the time.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C14",
+      "claim_text": "A 2024 Stanford study demonstrated a 96% reduction in hallucinations by combining Retrieval-Augmented Generation, Reinforcement Learning from Human Feedback, and guardrails.",
+      "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+      "evidence_span": "A 2024 Stanford study found that combining Retrieval-Augmented Generation (RAG), Reinforcement Learning from Human Feedback (RLHF), and guardrails led to a 96% reduction in hallucinations.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    },
+    {
+      "claim_id": "C15",
+      "claim_text": "Retrieval-Augmented Generation still produces errors even though it grounds model responses in external documents.",
+      "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+      "evidence_span": "But even RAG, which grounds model responses in external documents, still produces errors.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true
+    }
+  ]
+}

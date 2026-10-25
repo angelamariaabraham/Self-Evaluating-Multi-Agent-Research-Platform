@@ -1,7 +1,12 @@
+#research.py
 import os
 import sys
 import asyncio
-from checks import faithfulness_rate, span_in_source
+import csv
+import json
+import datetime
+from pathlib import Path
+from checks import faithfulness_rate, span_in_source, normalize, mismatch_report, near_rate
 # Ensure Windows terminal supports emoji / utf-8 characters without charmap errors
 if sys.platform == "win32":
     try:
@@ -20,8 +25,11 @@ from firecrawl import FirecrawlApp
 from google.genai import errors as genai_errors
 from dotenv import load_dotenv
 load_dotenv()
-from sources import fetch_full_text, save_source, load_source
-from checks import faithfulness_rate, span_in_source
+#from sources import fetch_full_text, save_source, load_source, top_chunks, MIN_CHARS
+from sources import cached_search, get_source_text, load_source, top_chunks, MIN_CHARS
+from contradiction import run_contradiction
+from support import check_support
+
 
 # --- 1. Monkeypatch LiteLLM cache breakpoint ---
 if not getattr(litellm, "_cache_breakpoint_patched", False):
@@ -41,57 +49,54 @@ if not getattr(litellm, "_cache_breakpoint_patched", False):
 
 
 # --- 3. Models (Using flash-lite for reliable free-tier quota) ---
-lite_llm = LLM(
-    model="gemini/gemini-3.5-flash-lite",
-    api_key=os.environ["GEMINI_API_KEY"],
-    max_retries=5,
-)
+
 strong_llm = LLM(
     model="gemini/gemini-3.5-flash-lite",
     api_key=os.environ["GEMINI_API_KEY"],
     max_retries=5,
+    temperature=0,
 )
 
 # --- 4. Firecrawl Tool (Supports both Dict and Object return types) ---
 firecrawl_client = FirecrawlApp(api_key=os.environ["FIRECRAWL_API_KEY"])
-HEAD_CHARS = 4000
-MIN_CHARS = 3000
+HEAD_CHARS = 2000
+
+
+
+
+TOPIC = "hallucination detection"
+def get_sources(topic):
+    items = cached_search(topic, limit=5)
+    return [it["url"] for it in items if len(get_source_text(it["url"])) >= MIN_CHARS]
+
+@tool("Read Stored Source")
+def read_source(url: str) -> str:
+    """Return the most topic-relevant passages of a stored source URL."""
+    try:
+        text = load_source(url)
+        if not text:
+            return "Source not found."
+        return "\n\n[...]\n\n".join(top_chunks(text, TOPIC, k=3, size=2500))
+    except Exception as e:
+        return f"TOOL ERROR: {type(e).__name__}: {e}"
+
+
+
 
 @tool("Firecrawl Web Search")
 def firecrawl_search(query: str) -> str:
-    """Search the web for a topic. Returns URL, title and the opening text of each source."""
+    """Search the web for a topic. Returns the URL and title of each source."""
     try:
-        results = firecrawl_client.search(query, limit=5)
-        if isinstance(results, dict):
-            items = results.get("data", []) or results.get("web", [])
-        else:
-            items = getattr(results, "data", None) or getattr(results, "web", None) or []
-
         output = []
-        for item in items:
-            if isinstance(item, dict):
-                url = item.get("url", "")
-                title = item.get("title", "")
-            else:
-                url = getattr(item, "url", "")
-                title = getattr(item, "title", "")
-            if not url:
+        for item in cached_search(TOPIC, limit=5):
+            if len(get_source_text(item["url"])) < MIN_CHARS:
                 continue
-
-            text = load_source(url)              # 1. try stored copy first
-            if not text:                          # 2. not stored: scrape once
-                text = fetch_full_text(url)
-                if len(text) < MIN_CHARS:         # 3. thin or failed page: skip
-                    continue
-                save_source(url, text)            # 4. store it for next time
-
-            output.append(f"URL: {url}\nTitle: {title}\nContent: {text[:HEAD_CHARS]}\n")
-
+            output.append(f"URL: {item['url']}\nTitle: {item['title']}\n")
         return "\n---\n".join(output) if output else "No results found."
     except Exception as e:
         return f"Error executing search: {str(e)}"
 
-
+    
 # --- 5. Agents ---
 research_agent = Agent(
     role="Web Research Specialist",
@@ -103,7 +108,7 @@ research_agent = Agent(
     ),
     tools=[firecrawl_search],
     llm=strong_llm,
-    max_iter=10,
+    max_iter=5,
     verbose=True,
 )
 
@@ -118,6 +123,7 @@ analysis_agent = Agent(
     llm=strong_llm,
     max_iter=10,
     verbose=True,
+    tools=[],
 )
 
 contradiction_agent = Agent(
@@ -129,7 +135,7 @@ contradiction_agent = Agent(
         "is 'right' or stress-test the reasoning behind them — that's the Devil's Advocate's job."
     ),
     llm=strong_llm,
-    max_iter=10,
+    max_iter=5,
     verbose=True,
 )
 
@@ -142,7 +148,7 @@ devils_advocate_agent = Agent(
         "You don't score confidence or generate the final report — that's the next stage."
     ),
     llm=strong_llm,
-    max_iter=10,
+    max_iter=5,
     verbose=True,
 )
 
@@ -155,34 +161,39 @@ report_agent = Agent(
         "but you don't generate new claims or re-judge anything upstream."
     ),
     llm=strong_llm,
-    max_iter=10,
+    max_iter=5,
     verbose=True,
 )
 
 # --- 6. Tasks ---
 research_task = Task(
     description=(
-        "Research the topic: '{topic}'. Use the Firecrawl Web Search tool to gather content from "
-        "5 credible, distinct sources - no more. Once you have 5 distinct sources, STOP searching "
-        "and compile your final answer immediately. Do not search for the same source twice. "
-        "For each source, capture the raw text and the source URL. Do not summarize or interpret — just collect."
+    "Research the topic: '{topic}'. Use the Firecrawl Web Search tool to find "
+    "5 credible, distinct sources. Once you have 5, STOP searching. "
+    "Return only each source's URL and title."
     ),
-    expected_output="A list of exactly 5 source entries, each containing raw text and its source URL.",
+    expected_output="A list of exactly 5 entries, each with a URL and title.",
     agent=research_agent,
 )
-
 analysis_task = Task(
     description=(
-        "Given the raw source entries collected above, extract key factual claims from each. "
-        "Break the text into atomic, individually-verifiable claims. "
-        "For each claim give: a unique claim_id, claim_text, source_url, and evidence_span. "
-        "evidence_span must be ONE sentence copied word for word from the source content. "
-        "Do not paraphrase it. Do not fix typos. "
-        "If no sentence supports the claim, drop the claim."
+        "Source URL: {url}\n\n"
+        "SOURCE TEXT:\n{source_text}\n\n"
+        "Extract exactly 3 factual claims about the topic: {topic}. "
+        "Ignore cookie notices, menus, ads, promotions and page metadata. "
+        "Prefer specific, checkable statements (methods, results, numbers) over general definitions. "
+        "For each claim give: claim_id, claim_text, source_url, evidence_span. "
+        "evidence_span must be ONE complete sentence of at least 8 words, copied word for word from the SOURCE TEXT above. "
+        "The claim must say no more than the span says. "
+        "Ignore marketing language and first-person statements (words like 'Our', 'We', 'Get'). "
+        "Ignore sentences that describe the document itself, such as what this survey, paper or article does or contains. "
+        "Each claim must make sense alone: never start a claim with a pronoun (They, It, This). "
+        "If the best sentence starts with a pronoun, pick a different sentence. "
+        "Ignore data availability statements, funding, acknowledgements, author or copyright notices, and references. "
+        "Never write a claim from memory. Do not fill any other field."
     ),
-    expected_output="A ClaimList with claim_id, claim_text, source_url, evidence_span for every claim.",
+    expected_output="A ClaimList with claim_id, claim_text, source_url, evidence_span for exactly 3 claims.",
     agent=analysis_agent,
-    context=[research_task],
     output_pydantic=ClaimList,
 )
 
@@ -226,12 +237,11 @@ report_task = Task(
 
 # --- 7. Crew ---
 research_crew = Crew(
-    agents=[research_agent, analysis_agent, contradiction_agent, devils_advocate_agent, report_agent],
-    tasks=[research_task, analysis_task, contradiction_task, devils_advocate_task, report_task],
+    agents=[analysis_agent],
+    tasks=[analysis_task],
     process=Process.sequential,
     verbose=True,
 )
-
 # --- 8. Validation and Async Execution Helper ---
 def is_bad_output(result) -> bool:
     """Helper to detect empty, malformed, or refused outputs."""
@@ -265,29 +275,117 @@ async def run_crew_with_retry(crew, inputs, max_attempts=5):
                 print(f"Known bug (attempt {attempt}/{max_attempts}) — retrying...")
                 continue
             raise
+        except Exception as e:
+            msg = str(e)
+            transient = ["None or empty", "Invalid response from LLM"]
+            if any(t in msg for t in transient) and attempt < max_attempts:
+                wait = 20 * attempt
+                print(f"Empty LLM response (attempt {attempt}/{max_attempts}) — waiting {wait}s...")
+                await asyncio.sleep(wait)
+                continue
+            raise
     raise RuntimeError("Crew failed after max attempts.")
 
 # --- 9. Entrypoint ---
+def log_run(topic, claims):
+    ok = [span_in_source(c.source_url, c.evidence_span) for c in claims]
+    copies = sum(normalize(c.claim_text) == normalize(c.evidence_span) for c in claims)
+    failed = [c.claim_id for c, good in zip(claims, ok) if not good]
+    row = [
+        datetime.datetime.now().isoformat(timespec="seconds"),
+        topic,
+        len(claims),
+        round(sum(ok) / len(claims), 3) if claims else 0,
+        copies,
+        ";".join(failed),
+        ";".join(sorted(set(c.source_url for c in claims))),
+    ]
 
+    new = not Path("runs.csv").exists()
+    try:
+        with open("runs.csv", "a", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            if new:
+                w.writerow(["time", "topic", "claims", "faithfulness",
+                            "claim_eq_span", "failed_ids", "urls"])
+            w.writerow(row)
+    except PermissionError:
+        backup = "runs_pending.csv"
+        with open(backup, "a", newline="", encoding="utf-8") as f:
+            csv.writer(f).writerow(row)
+        print(f"runs.csv is open in Excel. Row saved to {backup}. Close Excel, then merge.")
+
+JUNK_PHRASES = ["made available on request", "data availability",
+                "declaration of competing interest", "all rights reserved",
+                "conflicts of interest"]
+
+def keep_claim(c) -> bool:
+    if len(normalize(c.evidence_span).split()) < 8:
+        return False
+    low = c.evidence_span.lower()
+    return not any(p in low for p in JUNK_PHRASES)
 
 async def main():
-    topic = "hallucination detection"
-    print(f"Starting research crew for topic: '{topic}'...")
-    result = await run_crew_with_retry(research_crew, {"topic": topic})
-    print("\n================ FINAL REPORT ================\n")
-    print(result)
+    print(f"Starting research for topic: '{TOPIC}'...")
+    urls = get_sources(TOPIC)
+    print("sources:", len(urls))
 
-    # --- measure faithfulness ---
-    out = result.tasks_output[1].pydantic
-    if out:
-        claims = out.claims
-        print("\nclaims:", len(claims))
-        print("faithfulness:", faithfulness_rate(claims))
-        for c in claims:
-            print(c.claim_id, span_in_source(c.source_url, c.evidence_span))
-    else:
-        print("\npydantic output missing. raw:")
-        print(result.tasks_output[1].raw)
+    claims = []
+    for url in urls:
+        text = "\n\n[...]\n\n".join(top_chunks(load_source(url), TOPIC, k=3, size=2500))
+        result = await run_crew_with_retry(
+            research_crew, {"topic": TOPIC, "url": url, "source_text": text})
+        out = result.tasks_output[0].pydantic
+        if not out:
+            print("no parsed output for", url)
+            continue
+        for c in out.claims:
+            c.source_url = url                  # code decides the source, not the LLM
+            c.contradiction_flag = None         # clear fields the LLM invented
+            c.stress_verdict = None
+            c.confidence = None
+            claims.append(c)
+        print(f"  {len(out.claims)} claims from {url}")
+
+    before = len(claims)
+    claims = [c for c in claims if keep_claim(c)]
+    print(f"dropped {before - len(claims)} junk or too-short claims")
+
+    for i, c in enumerate(claims, 1):
+        c.claim_id = f"C{i:02d}"
+
+    check_support(claims)
+    for c in claims:
+        if c.span_supports_claim is False:
+            print("UNSUPPORTED:", c.claim_id, c.claim_text[:120])
+    print("\nclaims:", len(claims))
+    print("faithfulness:", faithfulness_rate(claims))
+    print("near-match rate:", near_rate(claims))
+    log_run(TOPIC, claims)
+
+    Path("runs").mkdir(exist_ok=True)
+    stamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    with open(f"runs/claims_{stamp}.json", "w", encoding="utf-8") as f:
+        json.dump(ClaimList(claims=claims).model_dump(), f, ensure_ascii=False, indent=2)
+
+    cres = run_contradiction(claims)
+    print(f"contradiction flags: {len(cres.flags)} "
+          f"(pairs checked {cres.pairs_checked}, failed {cres.pairs_failed})")
+    for fl in cres.flags:
+        print("  FLAG", fl.claim_ids, fl.explanation[:200])
+    with open(f"runs/contradiction_{stamp}.json", "w", encoding="utf-8") as fh:
+        json.dump(cres.model_dump(), fh, ensure_ascii=False, indent=2)
+
+    for c in claims:
+        ok = span_in_source(c.source_url, c.evidence_span)
+        if not ok:
+            print("\n", c.claim_id, "OK" if ok else "FAILED", c.source_url)
+            print("CLAIM:", c.claim_text)
+            print("SPAN: ", c.evidence_span)
+            print("DIAG:", mismatch_report(c.source_url, c.evidence_span))
+
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+

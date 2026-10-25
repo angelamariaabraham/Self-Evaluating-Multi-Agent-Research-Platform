@@ -1,0 +1,121 @@
+{
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim_text": "Researchers propose entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations known as confabulations.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations—confabulations—which are arbitrary and incorrect generations.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c2",
+      "claim_text": "The uncertainty calculation addresses the fact that one idea can be expressed in various ways by measuring uncertainty at the level of meaning instead of specific word sequences.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c3",
+      "claim_text": "The detection method functions across datasets and tasks without requiring prior task knowledge or task-specific data, and it generalizes to unseen tasks.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Our method works across datasets and tasks without a priori knowledge of the task, requires no task-specific data and robustly generalizes to new tasks not seen before.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c4",
+      "claim_text": "HHEM with non-fabrication checking achieved a top TPR of 78.9% and an accuracy of 82.2%.",
+      "source_url": "https://arxiv.org/html/2512.22416v2",
+      "evidence_span": "tegrates non-fabrication checking, achieved the highest TPR of 78.9% and an accuracy of 82.2%.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c5",
+      "claim_text": "In summarization tasks, KnowHalu performed the best while HHEM alone struggled to achieve high detection accuracy.",
+      "source_url": "https://arxiv.org/html/2512.22416v2",
+      "evidence_span": "The results indicate that KnowHalu performed the best in this task, while HHEM alone struggled to achieve high detection accuracy.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c6",
+      "claim_text": "The integration of Jaccard similarity, natural language inference, and normalized perplexity produces a hallucination metric where high values indicate potential hallucination.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S1877050925033241",
+      "evidence_span": "The integration of these components through a weighted average produces a hallucination metric where a high value indicates a potential occurrence of hallucination.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c7",
+      "claim_text": "The method's effectiveness is evaluated on benchmark datasets BEGIN and FEVER, demonstrating improved performance in hallucination detection.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S1877050925033241",
+      "evidence_span": "The method’s effectiveness is evaluated on benchmark datasets (BEGIN and FEVER), which demonstrates improved performance in hallucination detection.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c8",
+      "claim_text": "RACE provides a fine-grained and robust detector that consistently outperforms state-of-the-art baselines across multiple datasets and model families.",
+      "source_url": "https://github.com/EdinburghNLP/awesome-hallucination-detection",
+      "evidence_span": "By jointly assessing reasoning consistency, answer uncertainty, reasoning–answer alignment, and internal coherence, RACE provides a fine-grained and robust detector that consistently outperforms state-of-the-art baselines across multiple datasets and model families.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c9",
+      "claim_text": "RL4HS substantially improves fine-grained detection over CoT-based and supervised baselines on RAGTruth QA, Summarization, and Data-to-Text.",
+      "source_url": "https://github.com/EdinburghNLP/awesome-hallucination-detection",
+      "evidence_span": "On RAGTruth (QA, Summarization, Data-to-Text), RL4HS substantially improves fine-grained detection over CoT-based and supervised baselines.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c10",
+      "claim_text": "GPT-3.5 and LLaMA-2 hallucinate in 69% and 88% of legal Q&A respectively according to an empirical study.",
+      "source_url": "https://github.com/EdinburghNLP/awesome-hallucination-detection",
+      "evidence_span": "Empirical study finding that GPT-3.5 and LLaMA-2 hallucinate in 69% and 88% of legal Q&A, respectively.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c11",
+      "claim_text": "If a system is trained only on correct examples, fully automated detection is impossible for most language collections.",
+      "source_url": "https://medium.com/@khayyam.h/fact-or-fiction-my-attempts-at-hallucination-detection-in-llms-16bb82ab80fa",
+      "evidence_span": "If a system is trained only on correct examples, fully automated detection is impossible for most language collections.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c12",
+      "claim_text": "Attention-Guided Self-Reflection is a zero-shot approach that does not require fine-tuning on a specialized hallucination dataset.",
+      "source_url": "https://medium.com/@khayyam.h/fact-or-fiction-my-attempts-at-hallucination-detection-in-llms-16bb82ab80fa",
+      "evidence_span": "It’s a zero-shot approach, meaning it doesn’t need fine-tuning on a special hallucination dataset.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c13",
+      "claim_text": "The MIND framework is unsupervised and relies on internal LLM states to flag hallucinations without manual labels.",
+      "source_url": "https://medium.com/@khayyam.h/fact-or-fiction-my-attempts-at-hallucination-detection-in-llms-16bb82ab80fa",
+      "evidence_span": "It’s unsupervised and relies on the internal states of the LLM to flag hallucinations, all without manual labels.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    }
+  ]
+}

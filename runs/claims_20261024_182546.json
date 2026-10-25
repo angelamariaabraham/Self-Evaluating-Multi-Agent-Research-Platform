@@ -1,0 +1,40 @@
+{
+  "claims": [
+    {
+      "claim_id": "claim_1",
+      "claim_text": "Large language model systems often hallucinate false outputs and unsubstantiated answers.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Large language model (LLM) systems, such as ChatGPT1.) or Gemini2.), can show impressive reasoning and question-answering capabilities but often ‘hallucinate’ false outputs and unsubstantiated answers3.), 4 4035–4045 (Association for Computational Linguistics, 2018).",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "claim_2",
+      "claim_text": "Researchers need a general method for detecting hallucinations in LLMs that works with new and unseen questions.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Researchers need a general method for detecting hallucinations in LLMs that works even with new and unseen questions to which humans might not know the answer.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "claim_3",
+      "claim_text": "Entropy-based uncertainty estimators can be proposed for LLMs to detect a subset of hallucinations called confabulations.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations—confabulations—which are arbitrary and incorrect generations.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "claim_4",
+      "claim_text": "Hallucinations are defined as LLMs generating content that is nonsensical or unfaithful to the provided source content.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Hallucinations are often defined as LLMs generating “content that is nonsensical or unfaithful to the provided source content”9.), 10 1906–1919 (Association for Computational Linguistics, 2020).",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    }
+  ]
+}

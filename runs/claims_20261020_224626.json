@@ -1,0 +1,94 @@
+{
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim_text": "GPTZero source finder detects checkable, objective claims in text and matches those to sources from online, academic, and publicly available data.",
+      "source_url": "https://gptzero.me/hallucination-detector",
+      "evidence_span": "Source finder will detect as many checkable, objective claims in your text and match those to sources from online, academic, and publicly available data coming from AI-powered search engines.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c2",
+      "claim_text": "GPTZero's Hallucination Detector automatically identifies hallucinated sources and poorly supported claims in essays.",
+      "source_url": "https://gptzero.me/hallucination-detector",
+      "evidence_span": "GPTZero's Hallucination Detector automatically detects hallucinated sources and poorly supported claims in essays.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c3",
+      "claim_text": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c4",
+      "claim_text": "Contextual hallucinations happen when the AI is supposed to answer a prompt by using specific contextual data but relies on general training data instead.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Contextual hallucinations happen when the AI is supposed to answer a prompt by using specific contextual data, such as a document or database, but instead relies on its general training data.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c5",
+      "claim_text": "Consistency hallucinations occur when an AI model contradicts itself within the same conversation.",
+      "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+      "evidence_span": "Consistency hallucinations occur when an AI model contradicts itself within the same conversation.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c6",
+      "claim_text": "Stanford research found that specialized legal AI tools hallucinate between 17% and 34% of the time.",
+      "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+      "evidence_span": "Stanford research found that even specialized legal AI tools hallucinate between 17% and 34% of the time.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c7",
+      "claim_text": "A 2024 Stanford study found that combining Retrieval-Augmented Generation, Reinforcement Learning from Human Feedback, and guardrails led to a 96% reduction in hallucinations.",
+      "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+      "evidence_span": "A 2024 Stanford study found that combining Retrieval-Augmented Generation (RAG), Reinforcement Learning from Human Feedback (RLHF), and guardrails led to a 96% reduction in hallucinations.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c8",
+      "claim_text": "The highest accuracy in sentence classification for hallucination detection is demonstrated by the BERT stochastic checker and the LLM prompt-based detector.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/detect-hallucinations-for-rag-based-systems/",
+      "evidence_span": "The highest accuracy (number of sentences correctly classified as hallucination vs. fact) is demonstrated by the BERT stochastic checker and the LLM prompt-based detector.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c9",
+      "claim_text": "The LLM prompt-based detector outperforms the BERT checker in precision, while the BERT stochastic checker has a higher recall.",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/detect-hallucinations-for-rag-based-systems/",
+      "evidence_span": "The LLM prompt-based detector outperforms the BERT checker in precision, and the BERT stochastic checker has a higher recall.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    },
+    {
+      "claim_id": "c10",
+      "claim_text": "AI hallucinations refer to statements made by the system which are factually incorrect, illogical, or not substantiated by any credible sources.",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S2949719126000361",
+      "evidence_span": "AI hallucinations refer to statements made by the system which are either factually incorrect, illogical, or not substantiated by any credible sources but sound coherent and fluent on the face of it.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null
+    }
+  ]
+}

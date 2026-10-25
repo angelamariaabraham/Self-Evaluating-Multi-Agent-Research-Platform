@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim_text": "Researchers propose entropy-based uncertainty estimators for large language models to detect confabulations.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations—confabulations—which are arbitrary and incorrect generations.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c2",
+      "claim_text": "The detection method computes uncertainty at the level of meaning rather than specific word sequences.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c3",
+      "claim_text": "The detection method functions across datasets and tasks without prior knowledge of the task and without requiring task-specific data.",
+      "source_url": "https://www.nature.com/articles/s41586-024-07421-0",
+      "evidence_span": "Our method works across datasets and tasks without a priori knowledge of the task, requires no task-specific data and robustly generalizes to new tasks not seen before.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    }
+  ]
+}

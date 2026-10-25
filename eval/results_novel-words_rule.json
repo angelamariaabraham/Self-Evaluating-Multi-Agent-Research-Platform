@@ -1,0 +1,350 @@
+[
+ {
+  "pair_id": "1",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "1",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "2",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "2",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "3",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "3",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "4",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "4",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "5",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "5",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "6",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "6",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "7",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "7",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "8",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "8",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "9",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "9",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "10",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "10",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "11",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "11",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "12",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "12",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "13",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "13",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "14",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "14",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "15",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "15",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "16",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "16",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "17",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "17",
+  "label": "bad",
+  "error_type": "flip",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "18",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "18",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "19",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "19",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "20",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "20",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "21",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "21",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "22",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "22",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "23",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "23",
+  "label": "bad",
+  "error_type": "entity",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "24",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "24",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "25",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "25",
+  "label": "bad",
+  "error_type": "extra",
+  "pred_bad": true
+ },
+ {
+  "pair_id": "26",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "26",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "27",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "27",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "28",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "28",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "29",
+  "label": "good",
+  "error_type": "",
+  "pred_bad": false
+ },
+ {
+  "pair_id": "29",
+  "label": "bad",
+  "error_type": "number",
+  "pred_bad": false
+ }
+]

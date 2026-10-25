@@ -1,0 +1,76 @@
+{
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim_text": "Recent studies in 2025-2026 indicate that models such as GPT-4o and Claude 3.7 maintain a 15-20% hallucination rate on factual citation tasks.",
+      "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S221462962600191X",
+      "evidence_span": "Recent 2025–2026 studies confirm that even advanced models like GPT-4o and Claude 3.7 still exhibit 15–20% hallucination rates on factual citation tasks, rising sharply (to 35–55%) on niche or recent topics (Magesh et al. [5]; Vectara [12] [13]).",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c2",
+      "claim_text": "GPTZero analysis of NeurIPS 2025 papers revealed at least 100 confirmed hallucinated citations across 53 papers.",
+      "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S221462962600191X",
+      "evidence_span": "In January 2026, GPTZero's analysis of 4841 papers accepted to NeurIPS 2025---the premier AI conference---revealed at least 100 confirmed hallucinated citations spanning 53 papers (approximately 1% of accepted work), despite rigorous peer review by 3–5 experts per",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c3",
+      "claim_text": "The term AI hallucination was introduced into the PhD thesis of Eric Mjolsness in 1986.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "The term was introduced in the PhD thesis of Eric Mjolsness) in 1986.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c4",
+      "claim_text": "Meta warned in July 2021 that BlenderBot 2 was prone to hallucinations defined as confident false statements.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "In July 2021, Meta warned during its release of BlenderBot 2 that the system is prone to hallucinations, defined as \"confident statements that are not true\".",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c5",
+      "claim_text": "Language models hallucinate because standard training and evaluation procedures reward guessing over acknowledging uncertainty.",
+      "source_url": "https://openai.com/index/why-language-models-hallucinate/",
+      "evidence_span": "Our new research paper⁠(opens in a new window) argues that language models hallucinate because standard training and evaluation procedures reward guessing over acknowledging uncertainty.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c6",
+      "claim_text": "Arbitrary low-frequency facts like a pet's birthday cannot be predicted from patterns alone and therefore lead to hallucinations.",
+      "source_url": "https://openai.com/index/why-language-models-hallucinate/",
+      "evidence_span": "But arbitrary low-frequency facts, like a pet's birthday, cannot be predicted from patterns alone and hence lead to hallucinations.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c7",
+      "claim_text": "Oxford researchers demonstrated a novel method in Nature to detect when a Large Language Model is likely to hallucinate.",
+      "source_url": "https://www.ox.ac.uk/news/2024-06-20-major-research-hallucinating-generative-models-advances-reliability-artificial",
+      "evidence_span": "In a new study published today in Nature, they demonstrate a novel method to detect when a Large Language Model (LLM) is likely to ‘hallucinate’ (i.e. invent facts that sound plausible but are imaginary).",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "c8",
+      "claim_text": "The research team developed a statistical method using uncertainty estimation based on meaning-space semantic entropy.",
+      "source_url": "https://www.ox.ac.uk/news/2024-06-20-major-research-hallucinating-generative-models-advances-reliability-artificial",
+      "evidence_span": "To do this, the research team developed a method grounded in statistics and using methods that estimate uncertainty based on the amount of variation (measured as entropy) between multiple outputs.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    }
+  ]
+}

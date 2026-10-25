@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "In computer vision, hallucination is adding detail to an image to improve it since the 2000s.",
+      "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+      "evidence_span": "In computer vision, since the 2000s, hallucination is adding detail to an image to improve it.",
+      "contradiction_flag": null,
+      "stress_verdict": "holds",
+      "confidence": 1.0
+    }
+  ]
+}
