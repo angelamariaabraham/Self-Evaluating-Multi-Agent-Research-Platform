@@ -12,7 +12,7 @@ User query
    -> Contradiction Agent   (cross-checks claims across sources)
    -> Devil's Advocate      (stress-tests conclusions for weak reasoning)
    -> Quality Gate          (low confidence -> retry loop; pass -> report)
-   -> Report Agent          (confidence-scored PDF via ReportLab)
+   -> Report Agent          (confidence-scored markdown file)
    
 ✨ Features
 
@@ -28,4 +28,4 @@ User query
 
 🧾 Evidence-span faithfulness check: each claim must be backed by a span of retrieved source text
 
-📄 Exportable PDF report built with ReportLab
+📄 Exportable markdown file report.
