@@ -1,0 +1,202 @@
+[
+    {
+        "claim_text": "GPTZero's Hallucination Detector automatically detects hallucinated sources and poorly supported claims in essays.",
+        "evidence_span": "GPTZero's Hallucination Detector automatically detects hallucinated sources and poorly supported claims in essays.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "promotional",
+        "unsure": false
+    },
+    {
+        "claim_text": "Citation checkers identify hallucinated references instantly to help educators maintain academic integrity without spending time on manual verification.",
+        "evidence_span": "Our citation checker identifies these hallucinated references instantly, helping educators maintain academic integrity without spending time on manual verification.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "promotional",
+        "unsure": false
+    },
+    {
+        "claim_text": "Source finder detects checkable, objective claims in text and matches those to sources from online, academic, and publicly available data coming from AI-powered search engines.",
+        "evidence_span": "Source finder will detect as many checkable, objective claims in your text and match those to sources from online, academic, and publicly available data coming from AI-powered search engines.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "promotional",
+        "unsure": false
+    },
+    {
+        "claim_text": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of large language models in high-stakes scenarios.",
+        "evidence_span": "Detecting and mitigating errors and hallucinations pose significant challenges for practical deployment and reliability of LLMs in high-stakes scenarios, such as chip design, supply chain logistics, and medical diagnostics.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": true
+    },
+    {
+        "claim_text": "In 2023, the Cambridge dictionary updated its definition of hallucination to include this new sense specific to the field of AI.",
+        "evidence_span": "In 2023, the Cambridge dictionary updated its definition of hallucination to include this new sense specific to the field of AI.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "In October 2025, several hallucinations including non-existent academic sources and a fake quote from a federal court judgement were discovered in a report written by Deloitte and submitted to the Australian government.",
+        "evidence_span": "In October 2025, several hallucinations, including non-existent academic sources and a fake quote from a federal court judgement were discovered in an A$ 440,000 report written by Deloitte and submitted to the Australian government in July.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "AI hallucinations refer to statements made by the system which are either factually incorrect, illogical, or not substantiated by any credible sources but sound coherent and fluent on the face of it.",
+        "evidence_span": "AI hallucinations refer to statements made by the system which are either factually incorrect, illogical, or not substantiated by any credible sources but sound coherent and fluent on the face of it.",
+        "source_url": "https://www.sciencedirect.com/science/article/pii/S2949719126000361",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "Engineers view hallucinations as an active research problem and a key barrier to reliable deployment, especially in high-stakes domains such as healthcare, finance, legal and regulatory work.",
+        "evidence_span": "Engineers view hallucinations as an active research problem and a key barrier to reliable deployment, especially in high-stakes domains such as healthcare, finance, legal and regulatory work.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "weak",
+        "weakness": "overgeneral",
+        "unsure": false
+    },
+    {
+        "claim_text": "Generative AI models are trained to produce outputs that look statistically credible in a certain modality.",
+        "evidence_span": "Generative AI models are trained to produce outputs that look statistically credible in a certain modality.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": true
+    },
+    {
+        "claim_text": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+        "evidence_span": "Factual hallucinations occur when an AI tool states information that is objectively false about the world.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "Specialized legal AI tools hallucinate between 17% and 34% of the time according to Stanford research.",
+        "evidence_span": "Stanford research found that even specialized legal AI tools hallucinate between 17% and 34% of the time.",
+        "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+        "label": "weak",
+        "weakness": "no_basis",
+        "unsure": true
+    },
+    {
+        "claim_text": "A 2024 Stanford study found that combining Retrieval-Augmented Generation, Reinforcement Learning from Human Feedback, and guardrails led to a 96% reduction in hallucinations.",
+        "evidence_span": "A 2024 Stanford study found that combining Retrieval-Augmented Generation (RAG), Reinforcement Learning from Human Feedback (RLHF), and guardrails led to a 96% reduction in hallucinations.",
+        "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+        "label": "weak",
+        "weakness": "no_basis",
+        "unsure": true
+    },
+    {
+        "claim_text": "Retrieval-Augmented Generation grounds model responses in external documents but still produces errors.",
+        "evidence_span": "But even RAG, which grounds model responses in external documents, still produces errors.",
+        "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": true
+    },
+    {
+        "claim_text": "Various researchers cited by Wired have classified adversarial hallucinations as a high-dimensional statistical phenomenon, or have attributed hallucinations to insufficient training data.",
+        "evidence_span": "Various researchers cited by Wired have classified adversarial hallucinations as a high-dimensional statistical phenomenon, or have attributed hallucinations to insufficient training data.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "weak",
+        "weakness": "overgeneral",
+        "unsure": true
+    },
+    {
+        "claim_text": "Hallucinations generally involve AI models producing fabricated content that has no grounding in real data.",
+        "evidence_span": "Hallucinations generally involve AI models producing fabricated content that has no grounding in real data.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "weak",
+        "weakness": "overgeneral",
+        "unsure": false
+    },
+    {
+        "claim_text": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+        "evidence_span": "Symbolic artificial intelligence models generally do not produce hallucinations, unlike large language models.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "weak",
+        "weakness": "overgeneral",
+        "unsure": false
+    },
+    {
+        "claim_text": "AI writing tools often generate convincing but non-existent citations.",
+        "evidence_span": "AI writing tools often generate convincing but non-existent citations.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "overgeneral",
+        "unsure": false
+    },
+    {
+        "claim_text": "GPTZero source finder is to detect potentially misleading claims in text and give recommendations for sources that support or contradict those claims.",
+        "evidence_span": "GPTZero source finder is to detect potentially misleading claims in text and give recommendations for sources that support or contradict those claims.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "promotional",
+        "unsure": false
+    },
+    {
+        "claim_text": "In 2015, computer scientist Andrej Karpathy used hallucinated in a blog post to describe his recurrent neural network language model generating an incorrect citation link.",
+        "evidence_span": "In 2015, computer scientist Andrej Karpathy used hallucinated in a blog post to describe his recurrent neural network (RNN) language model generating an incorrect citation link.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "AI hallucinations are instances where an AI system produces outputs that sound plausible but are factually wrong, irrelevant or entirely fabricated.",
+        "evidence_span": "AI hallucinations are instances where an AI system produces outputs that sound plausible but are factually wrong, irrelevant or entirely fabricated.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "Consistency hallucinations occur when an AI model contradicts itself within the same conversation.",
+        "evidence_span": "Consistency hallucinations occur when an AI model contradicts itself within the same conversation.",
+        "source_url": "https://www.ibm.com/think/topics/ai-hallucinations",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "Specialized legal AI tools trained on case law, statutes, regulations, and expert-curated legal documents are less likely to invent authorities.",
+        "evidence_span": "Specialized legal AI tools trained on case law, statutes, regulations, and expert-curated legal documents are less likely to invent authorities.",
+        "source_url": "https://www.briefcatch.com/blog/blog-how-ai-hallucination-detection-works",
+        "label": "weak",
+        "weakness": "no_basis",
+        "unsure": false
+    },
+    {
+        "claim_text": "Get in-depth analysis highlighting specific sentences likely to contain hallucinated or incorrect citations, allowing educators to focus verification efforts on the most suspicious citations and claims rather than reviewing every source.",
+        "evidence_span": "Get in-depth analysis highlighting specific sentences likely to contain hallucinated or incorrect citations, allowing educators to focus verification efforts on the most suspicious citations and claims rather than reviewing every source.",
+        "source_url": "https://gptzero.me/hallucination-detector",
+        "label": "weak",
+        "weakness": "promotional",
+        "unsure": false
+    },
+    {
+        "claim_text": "In 2015, hallucinations were identified in visual semantic role labeling tasks by Saurabh Gupta and Jitendra Malik.",
+        "evidence_span": "In 2015, hallucinations were identified in visual semantic role labeling tasks by Saurabh Gupta and Jitendra Malik.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    },
+    {
+        "claim_text": "In computer vision, hallucination is adding detail to an image to improve it since the 2000s.",
+        "evidence_span": "In computer vision, since the 2000s, hallucination is adding detail to an image to improve it.",
+        "source_url": "https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)",
+        "label": "holds",
+        "weakness": "none",
+        "unsure": false
+    }
+]

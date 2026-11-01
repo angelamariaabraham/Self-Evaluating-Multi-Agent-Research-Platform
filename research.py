@@ -29,7 +29,7 @@ load_dotenv()
 from sources import cached_search, get_source_text, load_source, top_chunks, MIN_CHARS
 from contradiction import run_contradiction
 from support import check_support
-
+from devils_advocate import run_stress
 
 # --- 1. Monkeypatch LiteLLM cache breakpoint ---
 if not getattr(litellm, "_cache_breakpoint_patched", False):
@@ -64,7 +64,8 @@ HEAD_CHARS = 2000
 
 
 
-TOPIC = "hallucination detection"
+
+TOPIC = " ".join(a for a in sys.argv[1:] if not a.startswith("--")) or "hallucination detection"
 def get_sources(topic):
     items = cached_search(topic, limit=5)
     return [it["url"] for it in items if len(get_source_text(it["url"])) >= MIN_CHARS]
@@ -375,6 +376,13 @@ async def main():
         print("  FLAG", fl.claim_ids, fl.explanation[:200])
     with open(f"runs/contradiction_{stamp}.json", "w", encoding="utf-8") as fh:
         json.dump(cres.model_dump(), fh, ensure_ascii=False, indent=2)
+
+    sres = run_stress(claims)
+    with open(f"runs/stress_{stamp}.json", "w", encoding="utf-8") as fh:
+        json.dump(sres.model_dump(), fh, ensure_ascii=False, indent=2)
+
+
+
 
     for c in claims:
         ok = span_in_source(c.source_url, c.evidence_span)

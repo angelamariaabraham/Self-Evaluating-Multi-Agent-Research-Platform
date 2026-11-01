@@ -1,0 +1,208 @@
+{
+  "incomplete": [],
+  "contradiction": {
+    "flags": [],
+    "pairs_checked": 27,
+    "pairs_failed": 0
+  },
+  "stress": {
+    "items": [
+      {
+        "claim_id": "C01",
+        "verdict": "weak",
+        "weakness": "promotional",
+        "reason": "\"It is a cost-effective approach to improving LLM output\" uses marketing wording."
+      },
+      {
+        "claim_id": "C02",
+        "verdict": "weak",
+        "weakness": "hedged",
+        "reason": "\"RAG is one approach to solving some of these challenges.\" uses hedging language (\"one approach to solving some of\")"
+      },
+      {
+        "claim_id": "C03",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence provides a clear, factual definition distinguishing RAG from fine-tuning without any hedging, promotional language, overgeneralization, unsupported causation, or unverified statistics."
+      },
+      {
+        "claim_id": "C04",
+        "verdict": "weak",
+        "weakness": "causal",
+        "reason": "Fine-tuning increases a model's familiarity... while RAG assists the model in generating relevant, high-quality outputs."
+      },
+      {
+        "claim_id": "C05",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement describing a factual process with no qualifying problems from the list."
+      },
+      {
+        "claim_id": "C06",
+        "verdict": "weak",
+        "weakness": "causal",
+        "reason": "This integration enhances the LLM's context, providing it with a more comprehensive understanding"
+      },
+      {
+        "claim_id": "C07",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement with no hedging, promotional, overgeneral, causal, or unsupported numerical claims."
+      },
+      {
+        "claim_id": "C08",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable factual statement with no hedging, promotion, overgeneralization, unsupported causation, or missing source attribution."
+      },
+      {
+        "claim_id": "C09",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement with no listed weaknesses."
+      },
+      {
+        "claim_id": "C10",
+        "verdict": "weak",
+        "weakness": "hedged",
+        "reason": "he believes represent the future of generative AI"
+      }
+    ],
+    "failed": 0
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Retrieval-Augmented Generation is a cost-effective approach to improving large language model output so it remains relevant, accurate, and useful in various contexts.",
+      "source_url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+      "evidence_span": "It is a cost-effective approach to improving LLM output so it remains relevant, accurate, and useful in various contexts.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.0,
+      "span_supports_claim": false,
+      "stress_weakness": "promotional",
+      "confidence_reasons": [
+        "claim says more than its evidence span",
+        "weak evidence (promotional)"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Retrieval-Augmented Generation redirects the large language model to retrieve relevant information from authoritative, pre-determined knowledge sources.",
+      "source_url": "https://aws.amazon.com/what-is/retrieval-augmented-generation/",
+      "evidence_span": "RAG is one approach to solving some of these challenges.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.0,
+      "span_supports_claim": false,
+      "stress_weakness": "hedged",
+      "confidence_reasons": [
+        "claim says more than its evidence span",
+        "weak evidence (hedged)"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "The difference between RAG and fine-tuning is that RAG lets an LLM query an external data source while fine-tuning trains an LLM on domain-specific data.",
+      "source_url": "https://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "evidence_span": "The difference between RAG and fine-tuning is that RAG lets an LLM query an external data source while fine-tuning trains an LLM on domain-specific data.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Fine-tuning increases a model’s familiarity with the intended domain and output requirements, while RAG assists the model in generating relevant, high-quality outputs.",
+      "source_url": "https://www.ibm.com/think/topics/retrieval-augmented-generation",
+      "evidence_span": "Fine-tuning increases a model’s familiarity with the intended domain and output requirements, while RAG assists the model in generating relevant, high-quality outputs.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.65,
+      "span_supports_claim": true,
+      "stress_weakness": "causal",
+      "confidence_reasons": [
+        "weak evidence (causal)"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Once retrieved, the relevant information undergoes pre-processing, including tokenization, stemming, and removal of stop words.",
+      "source_url": "https://cloud.google.com/use-cases/retrieval-augmented-generation",
+      "evidence_span": "Once retrieved, the relevant information undergoes pre-processing, including tokenization, stemming, and removal of stop words.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "This integration enhances the LLM's context, providing it with a more comprehensive understanding of the topic.",
+      "source_url": "https://cloud.google.com/use-cases/retrieval-augmented-generation",
+      "evidence_span": "This integration enhances the LLM's context, providing it with a more comprehensive understanding of the topic.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.65,
+      "span_supports_claim": true,
+      "stress_weakness": "causal",
+      "confidence_reasons": [
+        "weak evidence (causal)"
+      ]
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "The term retrieval-augmented generation (RAG) was introduced in a 2020 paper that described combining a parametric language model with a non-parametric external memory accessed through retrieval at inference time.",
+      "source_url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "evidence_span": "The term retrieval-augmented generation (RAG) was introduced in a 2020 paper that described combining a parametric language model with a non-parametric external memory accessed through retrieval at inference time.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "Clock Tower X used RAG poisoning to flood the information space with sites and content sympathetic to Israel.",
+      "source_url": "https://en.wikipedia.org/wiki/Retrieval-augmented_generation",
+      "evidence_span": "Clock Tower X used RAG poisoning to flood the information space with sites and content sympathetic to Israel.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "Developers can implement the retrieval-augmented generation process with as few as five lines of code.",
+      "source_url": "https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/",
+      "evidence_span": "A blog by Lewis and three of the paper’s coauthors said developers can implement the process with as few as five lines of code.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "Patrick Lewis led the author team of the 2020 paper that coined the term retrieval-augmented generation.",
+      "source_url": "https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/",
+      "evidence_span": "Patrick Lewis, lead author of the 2020 paper that coined the term, apologized for the unflattering acronym that now describes a growing family of methods across hundreds of papers and dozens of commercial services he believes represent the future of generative AI.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.0,
+      "span_supports_claim": false,
+      "stress_weakness": "hedged",
+      "confidence_reasons": [
+        "claim says more than its evidence span",
+        "weak evidence (hedged)"
+      ]
+    }
+  ]
+}

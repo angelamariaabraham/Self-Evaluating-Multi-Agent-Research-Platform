@@ -1,0 +1,6 @@
+streamlit>=1.30.0
+litellm>=1.40.0
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+firecrawl-py>=4.0.0
+pandas>=2.0.0

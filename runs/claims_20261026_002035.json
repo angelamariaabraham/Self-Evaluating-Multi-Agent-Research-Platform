@@ -1,0 +1,136 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Intermittent fasting improved blood pressure and resting heart rates as well as other heart-related measurements.",
+      "source_url": "https://www.hopkinsmedicine.org/health/expert-qa/intermittent-fasting-what-is-it-and-how-does-it-work",
+      "evidence_span": "Intermittent fasting improved blood pressure and resting heart rates as well as other heart-related measurements.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Young men who fasted for 16 hours showed fat loss while maintaining muscle mass.",
+      "source_url": "https://www.hopkinsmedicine.org/health/expert-qa/intermittent-fasting-what-is-it-and-how-does-it-work",
+      "evidence_span": "Young men who fasted for 16 hours showed fat loss while maintaining muscle mass.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "In animal studies, intermittent fasting reduced tissue damage during surgery and improved results.",
+      "source_url": "https://www.hopkinsmedicine.org/health/expert-qa/intermittent-fasting-what-is-it-and-how-does-it-work",
+      "evidence_span": "In animals, intermittent fasting reduced tissue damage during surgery and improved results.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Intermittent fasting helps people lose weight equivalent to about 250 calories a day, or half a pound a week.",
+      "source_url": "https://hsph.harvard.edu/news/the-health-benefits-of-intermittent-fasting/",
+      "evidence_span": "Daily intermittent fasting does help people lose weight, the equivalent of about 250 calories a day, or half a pound a week.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": ""
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Daily intermittent fasting makes some people feel thirstier because it helps the body excrete more sodium in urine.",
+      "source_url": "https://hsph.harvard.edu/news/the-health-benefits-of-intermittent-fasting/",
+      "evidence_span": "Daily intermittent fasting does make some people feel thirstier.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": false,
+      "stress_weakness": ""
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Intermittent fasting lowers oxidative stress, which causes cell damage and plays a role in conditions like cancer and heart disease.",
+      "source_url": "https://hsph.harvard.edu/news/the-health-benefits-of-intermittent-fasting/",
+      "evidence_span": "Intermittent fasting also lowers oxidative stress, which causes cell damage and plays a role in conditions like cancer and heart disease.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": ""
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "Ramadan fasting has been reported to improve human health.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946909/",
+      "evidence_span": "Ramadan fasting has been reported to improve human health.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "Weight reduction is the primary mechanism underlying the beneficial effects of intermittent fasting.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946909/",
+      "evidence_span": "Weight reduction is the primary mechanism underlying the beneficial effects of IF.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "Fasting, especially repetitive fasting, induces organisms to shift their metabolic phase, which improves metabolic conditions and extends health expectancy.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946909/",
+      "evidence_span": "Fasting, especially repetitive fasting, induces organisms to shift their metabolic phase, which improves metabolic conditions and extends health expectancy.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "Research shows that intermittent fasting may improve some signs of health in the short term.",
+      "source_url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/intermittent-fasting/faq-20441303",
+      "evidence_span": "Research shows that intermittent fasting may improve some signs of health in the short term.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C11",
+      "claim_text": "Some evidence suggests that a 16-hour fasting, 8-hour eating cycle may raise heart disease risk compared with other time-restricted eating cycles.",
+      "source_url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/intermittent-fasting/faq-20441303",
+      "evidence_span": "Some evidence suggests that a 16-hour fasting, 8-hour eating cycle may raise heart disease risk compared with other time-restricted eating cycles.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    },
+    {
+      "claim_id": "C12",
+      "claim_text": "Intermittent fasting also may cause people to feel very tired and dizzy.",
+      "source_url": "https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/intermittent-fasting/faq-20441303",
+      "evidence_span": "Intermittent fasting also may cause people to feel very tired and dizzy.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": true,
+      "stress_weakness": "none"
+    }
+  ]
+}

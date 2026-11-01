@@ -1,0 +1,124 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Short-term insomnia is usually due to stress or a distressing event.",
+      "source_url": "https://www.mayoclinic.org/diseases-conditions/insomnia/symptoms-causes/syc-20355167",
+      "evidence_span": "Short-term insomnia is usually due to stress or a distressing event.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Long-term insomnia is usually due to stress, life events or habits that disrupt sleep.",
+      "source_url": "https://www.mayoclinic.org/diseases-conditions/insomnia/symptoms-causes/syc-20355167",
+      "evidence_span": "Long-term insomnia is usually due to stress, life events or habits that disrupt sleep.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "About half the people with chronic insomnia also have at least one other mental health disorder, like anxiety or depression.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/12119-insomnia",
+      "evidence_span": "About half the people with chronic insomnia also have at least one other mental health disorder, like anxiety or depression.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Temporary illnesses and chronic conditions can lead to insomnia.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/12119-insomnia",
+      "evidence_span": "Temporary illnesses (like COVID-19 or injuries) and chronic conditions (like chronic pain or Parkinson’s disease) can lead to insomnia.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Studies in persons with insomnia have found increased heart rates, elevations in the stress hormone cortisol or greater amounts of fast brain activity around sleep onset.",
+      "source_url": "https://sleep.hms.harvard.edu/education-training/public-education/sleep-and-health-education-program/sleep-health-education-20",
+      "evidence_span": "Studies in persons with insomnia have found increased heart rates, elevations in the stress hormone cortisol or greater amounts of fast brain activity around sleep onset.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Precipitating factors are circumstances that trigger the first few nights of insomnia.",
+      "source_url": "https://sleep.hms.harvard.edu/education-training/public-education/sleep-and-health-education-program/sleep-health-education-20",
+      "evidence_span": "Precipitating factors are circumstances that trigger the first few nights of insomnia.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "Secondary insomnia is caused by or happens alongside other health conditions or as a side effect of prescribed medicines.",
+      "source_url": "https://womenshealth.gov/a-z-topics/insomnia",
+      "evidence_span": "Secondary insomnia is caused by or happens alongside other health conditions or as a side effect of prescribed medicines.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "Older women are at a higher risk of insomnia.",
+      "source_url": "https://womenshealth.gov/a-z-topics/insomnia",
+      "evidence_span": "Older women are at a higher risk of insomnia.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "From daily deadlines to major life changes, stress is one of the leading causes of insomnia.",
+      "source_url": "https://stvincents.org/about-us/news-press/news-detail?articleId=67087&publicid=461",
+      "evidence_span": "From daily deadlines to major life changes, stress is one of the leading causes of insomnia.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "Even small disruptions, like an unfamiliar bed or a travel schedule, can trigger short-term insomnia.",
+      "source_url": "https://stvincents.org/about-us/news-press/news-detail?articleId=67087&publicid=461",
+      "evidence_span": "Even small disruptions, like an unfamiliar bed or a travel schedule, can trigger short‑term insomnia.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    }
+  ]
+}

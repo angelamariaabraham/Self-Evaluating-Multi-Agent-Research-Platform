@@ -2,6 +2,7 @@ import os, re, json, time, hashlib, logging
 import litellm
 from dotenv import load_dotenv
 from schema import ContradictionFlag, ContradictionResult
+from llm_util import call
 
 load_dotenv()
 litellm.suppress_debug_info = True
@@ -33,23 +34,16 @@ def judge(a: str, b: str):
     key = hashlib.md5(prompt.encode("utf-8")).hexdigest()
     if key in _cache:
         return _cache[key]
-    for attempt in range(4):
-        try:
-            r = litellm.completion(
-                model=MODEL, api_key=os.environ["GEMINI_API_KEY"],
-                messages=[{"role": "user", "content": prompt}],
-                temperature=0, timeout=60, num_retries=0)
-            text = (r.choices[0].message.content or "").strip().upper()
-            if text:
-                verdict = text.startswith("CONTRADICT")
-                _cache[key] = verdict
-                json.dump(_cache, open(CACHE_PATH, "w", encoding="utf-8"))
-                time.sleep(CALL_GAP)
-                return verdict
-        except Exception as e:
-            print("  contradiction llm error:", type(e).__name__)
-            time.sleep(20 * (attempt + 1))
-    return None
+    text = call(prompt)
+    if not text:
+        return None
+    verdict = text.upper().startswith("CONTRADICT")
+    _cache[key] = verdict
+    json.dump(_cache, open(CACHE_PATH, "w", encoding="utf-8"))
+    return verdict
+
+
+
 
 
 

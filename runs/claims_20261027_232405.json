@@ -1,0 +1,124 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Hormonal changes, specifically fluctuations and estrogen that can occur during menstrual periods, pregnancy and perimenopause can trigger a migraine attack.",
+      "source_url": "https://www.mayoclinic.org/diseases-conditions/migraine-headache/symptoms-causes/syc-20360201",
+      "evidence_span": "Hormonal changes, specifically fluctuations and estrogen that can occur during menstrual periods, pregnancy and perimenopause can trigger a migraine attack.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Other known triggers include certain medications, drinking alcohol, especially red wine, drinking too much caffeine, stress.",
+      "source_url": "https://www.mayoclinic.org/diseases-conditions/migraine-headache/symptoms-causes/syc-20360201",
+      "evidence_span": "Other known triggers include certain medications, drinking alcohol, especially red wine, drinking too much caffeine, stress.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "Up to 80% of people with migraines have a first-degree biological relative with the condition.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/5005-migraine-headaches",
+      "evidence_span": "Up to 80% of people with migraines have a first-degree biological relative with the condition.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Women are more likely than men to experience a migraine.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/5005-migraine-headaches",
+      "evidence_span": "Women are more likely than men to experience a migraine.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Stress is a trigger for almost 70% of people with migraine.",
+      "source_url": "https://americanmigrainefoundation.org/resource-library/top-10-migraine-triggers/",
+      "evidence_span": "Perhaps the biggest culprit of all, stress is a trigger for almost 70% of people with migraine, and one study revealed that 50-70% of people had a significant association between their daily stress level and their daily migraine activity.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Nearly half of all migraine attacks occur between 4:00am and 9:00am, putting people at a greater risk for developing a sleep disorder.",
+      "source_url": "https://americanmigrainefoundation.org/resource-library/top-10-migraine-triggers/",
+      "evidence_span": "Nearly half of all migraine attacks occur between 4:00am and 9:00am, putting people at a greater risk for developing a sleep disorder.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "Alcohol, including wine and other spirits, can be a migraine trigger.",
+      "source_url": "https://www.pfizerforall.com/migraine/education/common-migraine-triggers",
+      "evidence_span": "Alcohol, including wine and other spirits, can be a migraine trigger.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "Migraine attacks often occur just before or during menstruation, when estrogen levels drop.",
+      "source_url": "https://www.pfizerforall.com/migraine/education/common-migraine-triggers",
+      "evidence_span": "Migraine attacks often occur just before or during menstruation, when estrogen levels drop.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "Research suggests that changes involving neurotransmitters and neuropeptides in the brain may play a role.",
+      "source_url": "https://store.mayoclinic.com/education/migraine-symptoms-causes-triggers-diagnosis-and-treatment/?srsltid=AYCX9vLsx5yXcux0Ij4p7bbNw6-muU4jwV3o5_xr2au41YvChB-RmmvY",
+      "evidence_span": "Research suggests that changes involving neurotransmitters and neuropeptides in the brain may play a role.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "One of these neuropeptides is calcitonin gene-related peptide, or CGRP.",
+      "source_url": "https://store.mayoclinic.com/education/migraine-symptoms-causes-triggers-diagnosis-and-treatment/?srsltid=AYCX9vLsx5yXcux0Ij4p7bbNw6-muU4jwV3o5_xr2au41YvChB-RmmvY",
+      "evidence_span": "One of these neuropeptides is calcitonin gene-related peptide, or CGRP.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    }
+  ]
+}

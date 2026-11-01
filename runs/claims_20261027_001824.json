@@ -1,0 +1,112 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "In 2024, Cheddad and Cheddad proposed a framework for reconstructing lost or corrupted audio signals using machine learning and latent information.",
+      "source_url": "https://en.wikipedia.org/wiki/Steganography",
+      "evidence_span": "In 2024, Cheddad & Cheddad proposed a new framework [28] for reconstructing lost or corrupted audio signals using a combination of machine learning techniques and latent information.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Adaptive steganography is a technique for concealing information within digital media by tailoring the embedding process to the specific features of the cover medium.",
+      "source_url": "https://en.wikipedia.org/wiki/Steganography",
+      "evidence_span": "Adaptive steganography is a technique for concealing information within digital media by tailoring the embedding process to the specific features of the cover medium.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "Hackers use least significant bit, palette-based, and secure cover selection techniques as they build their steganographic attacks.",
+      "source_url": "https://www.okta.com/identity-101/steganography/",
+      "evidence_span": "Hackers use one of three techniques as they build their attacks.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Least significant bit steganography involves embedding the secret information in the least significant bits of a media file.",
+      "source_url": "https://www.kaspersky.com/resource-center/definitions/what-is-steganography",
+      "evidence_span": "One of the most prevalent techniques is called ‘least significant bit’ (LSB) steganography.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Modifying the last bit of the pixel value doesn’t result in a visually perceptible change to the picture.",
+      "source_url": "https://www.kaspersky.com/resource-center/definitions/what-is-steganography",
+      "evidence_span": "Modifying the last bit of the pixel value doesn’t result in a visually perceptible change to the picture, which means that anyone viewing the original and the steganographically-modified images won’t be able to tell the difference.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "DNSChanger uses PNG LSBs to hide malware AES encryption key.",
+      "source_url": "https://www.sentinelone.com/blog/hiding-code-inside-images-malware-steganography/",
+      "evidence_span": "DNSChanger – uses PNG LSBs to hide malware AES encryption key",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "ZeroT is a Chinese malware that uses steganography to hide malware in an image of Britney Spears.",
+      "source_url": "https://www.sentinelone.com/blog/hiding-code-inside-images-malware-steganography/",
+      "evidence_span": "ZeroT – Chinese malware that uses steganography to hide malware in an image of Britney Spears",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "OpenStego is an open-source tool for this purpose that offers two main functionalities: data hiding and watermarking (i.e., hiding an invisible signature).",
+      "source_url": "https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-steganography-guide-meaning-types-tools/",
+      "evidence_span": "OpenStego is an open-source tool for this purpose that offers two main functionalities: data hiding and watermarking (i.e., hiding an invisible signature).",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "In June 2020, security researchers at Malwarebytes discovered that malicious actors had hidden code for a web skimmer inside the EXIF metadata of an image file.",
+      "source_url": "https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-steganography-guide-meaning-types-tools/",
+      "evidence_span": "In June 2020, for example, security researchers at Malwarebytes discovered that malicious actors had hidden code for a web skimmer inside the EXIF metadata of an image file.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    }
+  ]
+}

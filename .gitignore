@@ -1,2 +1,24 @@
+# Environment and secrets
 .env
+.env.*
+!.env.example
 
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Archives and backups
+*.zip
+*.tar.gz
+
+# Logs
+*.log
+run_log.txt
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,124 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Uma Chatterjee coped with her fear by using as few resources as possible, such as relying on her phone's flashlight when alone.",
+      "source_url": "https://www.nimh.nih.gov/news/science-updates/2024/my-life-with-ocd",
+      "evidence_span": "When she was alone, she relied on her phone’s flashlight so she wouldn’t have to turn on any other lights.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "As part of her compulsive behaviors, Uma Chatterjee would turn off lights or count paper towels when her husband was not looking.",
+      "source_url": "https://www.nimh.nih.gov/news/science-updates/2024/my-life-with-ocd",
+      "evidence_span": "The more logical side of me could see that he was just living like a normal person.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "Obsessive-compulsive disorder affects about 2 out of every 100 people in the U.S.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/9490-ocd-obsessive-compulsive-disorder",
+      "evidence_span": "It affects about 2 out of every 100 people in the U.S.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Obsessive-compulsive disorder can take a heavy toll on your daily life.",
+      "source_url": "https://my.clevelandclinic.org/health/diseases/9490-ocd-obsessive-compulsive-disorder",
+      "evidence_span": "Obsessive-compulsive disorder can take a heavy toll on your daily life.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "The National Institutes of Health estimates that approximately 2.3% of adult women and men in the U.S. have or have had OCD.",
+      "source_url": "https://www.thesohocenter.com/post/understanding-ocd-and-how-it-can-affect-your-daily-life",
+      "evidence_span": "The National Institutes of Health estimates that approximately 2.3% of adult women and men in the U.S. have or have had OCD.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "Perfectionism is one of the hallmarks of OCD.",
+      "source_url": "https://www.thesohocenter.com/post/understanding-ocd-and-how-it-can-affect-your-daily-life",
+      "evidence_span": "Perfectionism is one of the hallmarks of OCD.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "Compulsions and obsessions may take up many hours of a person’s day and can interfere with family and social relationships.",
+      "source_url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/obsessive-compulsive-disorder",
+      "evidence_span": "Compulsions and obsessions may take up many hours of a person’s day and can interfere with family and social relationships.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "OCD can make it difficult for people to perform everyday activities like eating, drinking, shopping or reading.",
+      "source_url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/obsessive-compulsive-disorder",
+      "evidence_span": "OCD can make it difficult for people to perform everyday activities like eating, drinking, shopping or reading.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "Morning and evening routines may take hours due to checking or repeating behaviours.",
+      "source_url": "https://www.smarttms.co.uk/news/obsessive-compulsive-disorder-ocd-how-it-affects-daily-life-and-how-tms-may-help",
+      "evidence_span": "Morning and evening routines may take hours due to checking or repeating behaviours",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C10",
+      "claim_text": "Work and academic performance can suffer due to difficulty concentrating.",
+      "source_url": "https://www.smarttms.co.uk/news/obsessive-compulsive-disorder-ocd-how-it-affects-daily-life-and-how-tms-may-help",
+      "evidence_span": "Work and academic performance can suffer due to difficulty concentrating",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    }
+  ]
+}

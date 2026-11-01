@@ -1,0 +1,184 @@
+{
+  "incomplete": [],
+  "contradiction": {
+    "flags": [],
+    "pairs_checked": 9,
+    "pairs_failed": 0
+  },
+  "stress": {
+    "items": [
+      {
+        "claim_id": "C01",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement with a proper citation [28]."
+      },
+      {
+        "claim_id": "C02",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "It is a plain definition of adaptive steganography without any of the listed flaws."
+      },
+      {
+        "claim_id": "C03",
+        "verdict": "weak",
+        "weakness": "overgeneral",
+        "reason": "uses the sweeping word 'one of three techniques' to describe all hackers' actions"
+      },
+      {
+        "claim_id": "C04",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement with no hedging, promotion, overgeneralization, causal claim without method, or uncited number."
+      },
+      {
+        "claim_id": "C05",
+        "verdict": "weak",
+        "weakness": "causal",
+        "reason": "Modifying the last bit of the pixel value doesn’t result in a visually perceptible change to the picture, which means that anyone viewing the original and the steganographically-modified images won’t be able to tell the difference."
+      },
+      {
+        "claim_id": "C06",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "specific, checkable technical description of a malware mechanism"
+      },
+      {
+        "claim_id": "C07",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "It is a specific, checkable statement with no listed weaknesses."
+      },
+      {
+        "claim_id": "C08",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "OpenStego is an open-source tool for this purpose that offers two main functionalities: data hiding and watermarking"
+      },
+      {
+        "claim_id": "C09",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement with no hedging, promotion, overgeneralization, unsupported causation, or missing citation basis."
+      }
+    ],
+    "failed": 0
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "In 2024, Cheddad and Cheddad proposed a framework for reconstructing lost or corrupted audio signals using machine learning and latent information.",
+      "source_url": "https://en.wikipedia.org/wiki/Steganography",
+      "evidence_span": "In 2024, Cheddad & Cheddad proposed a new framework [28] for reconstructing lost or corrupted audio signals using a combination of machine learning techniques and latent information.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "Adaptive steganography is a technique for concealing information within digital media by tailoring the embedding process to the specific features of the cover medium.",
+      "source_url": "https://en.wikipedia.org/wiki/Steganography",
+      "evidence_span": "Adaptive steganography is a technique for concealing information within digital media by tailoring the embedding process to the specific features of the cover medium.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C03",
+      "claim_text": "Hackers use least significant bit, palette-based, and secure cover selection techniques as they build their steganographic attacks.",
+      "source_url": "https://www.okta.com/identity-101/steganography/",
+      "evidence_span": "Hackers use one of three techniques as they build their attacks.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.0,
+      "span_supports_claim": false,
+      "stress_weakness": "overgeneral",
+      "confidence_reasons": [
+        "claim says more than its evidence span",
+        "weak evidence (overgeneral)"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "claim_text": "Least significant bit steganography involves embedding the secret information in the least significant bits of a media file.",
+      "source_url": "https://www.kaspersky.com/resource-center/definitions/what-is-steganography",
+      "evidence_span": "One of the most prevalent techniques is called ‘least significant bit’ (LSB) steganography.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.2,
+      "span_supports_claim": false,
+      "stress_weakness": "none",
+      "confidence_reasons": [
+        "claim says more than its evidence span"
+      ]
+    },
+    {
+      "claim_id": "C05",
+      "claim_text": "Modifying the last bit of the pixel value doesn’t result in a visually perceptible change to the picture.",
+      "source_url": "https://www.kaspersky.com/resource-center/definitions/what-is-steganography",
+      "evidence_span": "Modifying the last bit of the pixel value doesn’t result in a visually perceptible change to the picture, which means that anyone viewing the original and the steganographically-modified images won’t be able to tell the difference.",
+      "contradiction_flag": false,
+      "stress_verdict": "weak",
+      "confidence": 0.65,
+      "span_supports_claim": true,
+      "stress_weakness": "causal",
+      "confidence_reasons": [
+        "weak evidence (causal)"
+      ]
+    },
+    {
+      "claim_id": "C06",
+      "claim_text": "DNSChanger uses PNG LSBs to hide malware AES encryption key.",
+      "source_url": "https://www.sentinelone.com/blog/hiding-code-inside-images-malware-steganography/",
+      "evidence_span": "DNSChanger – uses PNG LSBs to hide malware AES encryption key",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C07",
+      "claim_text": "ZeroT is a Chinese malware that uses steganography to hide malware in an image of Britney Spears.",
+      "source_url": "https://www.sentinelone.com/blog/hiding-code-inside-images-malware-steganography/",
+      "evidence_span": "ZeroT – Chinese malware that uses steganography to hide malware in an image of Britney Spears",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C08",
+      "claim_text": "OpenStego is an open-source tool for this purpose that offers two main functionalities: data hiding and watermarking (i.e., hiding an invisible signature).",
+      "source_url": "https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-steganography-guide-meaning-types-tools/",
+      "evidence_span": "OpenStego is an open-source tool for this purpose that offers two main functionalities: data hiding and watermarking (i.e., hiding an invisible signature).",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C09",
+      "claim_text": "In June 2020, security researchers at Malwarebytes discovered that malicious actors had hidden code for a web skimmer inside the EXIF metadata of an image file.",
+      "source_url": "https://www.eccouncil.org/cybersecurity-exchange/ethical-hacking/what-is-steganography-guide-meaning-types-tools/",
+      "evidence_span": "In June 2020, for example, security researchers at Malwarebytes discovered that malicious actors had hidden code for a web skimmer inside the EXIF metadata of an image file.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    }
+  ]
+}

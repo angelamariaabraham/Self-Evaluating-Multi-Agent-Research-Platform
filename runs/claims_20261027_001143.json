@@ -1,0 +1,28 @@
+{
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Across its image-analysis modules the platform covers more than 80 potential skin-condition categories and provides next-step guidance.",
+      "source_url": "https://www.scanskinai.com/scan-skin-illness",
+      "evidence_span": "Across its image-analysis modules the platform covers more than 80 potential skin-condition categories and provides next-step guidance.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "By uploading a photo of your skin, mole, rash or lesion, you receive preliminary AI-supported suggestions in around 30 seconds.",
+      "source_url": "https://www.scanskinai.com/scan-skin-illness",
+      "evidence_span": "By uploading a photo of your skin, mole, rash or lesion, you receive preliminary AI-supported suggestions in around 30 seconds.",
+      "contradiction_flag": null,
+      "stress_verdict": null,
+      "confidence": null,
+      "span_supports_claim": null,
+      "stress_weakness": null,
+      "confidence_reasons": []
+    }
+  ]
+}

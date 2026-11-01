@@ -1,0 +1,51 @@
+{
+  "incomplete": [],
+  "contradiction": {
+    "flags": [],
+    "pairs_checked": 0,
+    "pairs_failed": 0
+  },
+  "stress": {
+    "items": [
+      {
+        "claim_id": "C01",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "The sentence is a specific, checkable statement about the platform's capabilities without any listed flaws."
+      },
+      {
+        "claim_id": "C02",
+        "verdict": "holds",
+        "weakness": "none",
+        "reason": "It is a specific, checkable statement about how the service functions with no listed weaknesses."
+      }
+    ],
+    "failed": 0
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "claim_text": "Across its image-analysis modules the platform covers more than 80 potential skin-condition categories and provides next-step guidance.",
+      "source_url": "https://www.scanskinai.com/scan-skin-illness",
+      "evidence_span": "Across its image-analysis modules the platform covers more than 80 potential skin-condition categories and provides next-step guidance.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    },
+    {
+      "claim_id": "C02",
+      "claim_text": "By uploading a photo of your skin, mole, rash or lesion, you receive preliminary AI-supported suggestions in around 30 seconds.",
+      "source_url": "https://www.scanskinai.com/scan-skin-illness",
+      "evidence_span": "By uploading a photo of your skin, mole, rash or lesion, you receive preliminary AI-supported suggestions in around 30 seconds.",
+      "contradiction_flag": false,
+      "stress_verdict": "holds",
+      "confidence": 0.9,
+      "span_supports_claim": true,
+      "stress_weakness": "none",
+      "confidence_reasons": []
+    }
+  ]
+}
