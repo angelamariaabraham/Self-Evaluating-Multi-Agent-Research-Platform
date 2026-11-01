@@ -1,0 +1,1 @@
+A five-agent research pipeline that gathers sources, extracts claims, checks them against the original source text, and produces a confidence-scored report. Built to study one narrow question: can a pipeline verify its own claims against the evidence it collected?
